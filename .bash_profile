@@ -57,9 +57,9 @@ alias cdn='cd '$PATH_TO_INTREPICA'noxml'
 
 ##################################################################
 # Cobra 2
-export PATH_TO_MONO_REPO=$PATH_TO_INTREPICA'/perforce/lp/monorepo/lp/'
-export PATH_TO_COBRA2=$PATH_TO_MONO_REPO'/client/cobra2/'
-export PATH_TO_SX=$PATH_TO_MONO_REPO'/client/sx/entry/'
+export PATH_TO_MONO_REPO=$PATH_TO_INTREPICA'perforce/lp/monorepo/lp/'
+export PATH_TO_COBRA2=$PATH_TO_MONO_REPO'client/cobra2/'
+export PATH_TO_SX=$PATH_TO_MONO_REPO'client/sx/entry/'
 
 alias cdc='cd '$PATH_TO_COBRA2
 alias startc='cd '$PATH_TO_COBRA2' && npm start'
