@@ -1,22 +1,20 @@
-#########################################################################################################
-# Changing Directories
-#########################################################################################################
-export PATH_TO_INTREPICA='~/Intrepica/'
-export PATH_TO_COBRA=$PATH_TO_INTREPICA'cobra/'
-export PATH_TO_MONO_REPO=$PATH_TO_INTREPICA'/perforce/lp/monorepo/lp/'
-export PATH_TO_COBRA2=$PATH_TO_MONO_REPO'/client/cobra2/'
-export PATH_TO_SX=$PATH_TO_MONO_REPO'/client/sx/entry/'
-export PATH_TO_BRENT_SCRIPTS="~/Intrepica/brents_scripts/cobra-bash-scripts/"
+##################################################################
+# Brent personal
 export PATH_TO_BRENT_PROJECTS="~/Documents/Projects/brentmcivor/"
-
 alias cdbr="cd "$PATH_TO_BRENT_PROJECTS"brentmc"
 alias cdba="cd "$PATH_TO_BRENT_PROJECTS"bamfusion"
 alias cdc="cd "$PATH_TO_BRENT_PROJECTS"common-resources"
 
+##################################################################
+# 1.7 Flash and legacy
+export PATH_TO_INTREPICA='~/Intrepica/'
 alias cdi='cd '$PATH_TO_INTREPICA
 alias cdl='cd '$PATH_TO_INTREPICA'literacyplanet/src'
 alias cda='cd '$PATH_TO_INTREPICA'intrepica-assets'
 
+##################################################################
+# Cobra1
+export PATH_TO_COBRA=$PATH_TO_INTREPICA'cobra/'
 alias cdc1='cd '$PATH_TO_COBRA
 alias cdap='cd '$PATH_TO_COBRA'cobra-app'
 alias cdaps='cd '$PATH_TO_COBRA'cobra-apps'
@@ -27,40 +25,13 @@ alias cdapi='cd'$PATH_TO_COBRA'cobra-lp-api'
 alias cdto='cd '$PATH_TO_COBRA'cobra-tools'
 alias cdui='cd '$PATH_TO_COBRA'cobra-ui'
 
-alias cdc='cd '$PATH_TO_COBRA2
-alias start2='cd '$PATH_TO_COBRA2' && npm start'
-alias tw2='cd '$PATH_TO_COBRA2' && npm run test_watch'
-
-alias cdm='cd '$PATH_TO_MONO_REPO
-alias cdsx='cd '$PATH_TO_SX
-
-#########################################################################################################
-# Contiki Dev
-#########################################################################################################
-# alias sup='cdm && lpdc -c services/missions -c services/sx -c services/students -c services/student_missions -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets  up'
-
-# start the bare services needed for client/avatar dev
-alias sup='cdm && lpdc  -c services/sx -c services/students  -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets up'
-
-# safely docker down all services
-alias sdown='cdm && lpdc -c services/missions -c services/sx -c services/students -c services/student_missions -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets -c client/sx/entry -c client/backend/entry/ down'
-
-
-# docker ps (shows all remaining docker containers)
-# docker kill fooContainerID
-
-# clear all node modules in children directories
-alias cnm='find . -name "node_modules" -type d -exec rm -r "{}" \;'
-
-
-#########################################################################################################
-alias cdn='cd '$PATH_TO_INTREPICA'noxml'
-
+export PATH_TO_BRENT_SCRIPTS="~/Intrepica/brents_scripts/cobra-bash-scripts/"
 alias startlp="cd "$PATH_TO_BRENT_SCRIPTS" && ./start-lp.sh -startVagrant"
 alias stoplp="cd "$PATH_TO_BRENT_SCRIPTS" && ./start-lp.sh -stopVagrant"
-alias startcobra="cd "$PATH_TO_BRENT_SCRIPTS" && ./start-lp.sh -startJustCobra"
+alias startcobra1="cd "$PATH_TO_BRENT_SCRIPTS" && ./start-lp.sh -startJustCobra"
 alias startcobralp="cd "$PATH_TO_BRENT_SCRIPTS" && ./start-lp.sh -startCobraAndVagrant"
 
+# Cobra1 tools
 alias opencobra="cd "$PATH_TO_BRENT_SCRIPTS" && ./open-all-cobra-gits.sh -open"
 alias pullcobra="cd "$PATH_TO_BRENT_SCRIPTS" && ./open-all-cobra-gits.sh -pull"
 alias pushcobra="cd "$PATH_TO_BRENT_SCRIPTS" && ./open-all-cobra-gits.sh -push"
@@ -72,6 +43,7 @@ alias deletetagcobra="cd "$PATH_TO_BRENT_SCRIPTS" && ./open-all-cobra-gits.sh -d
 alias checkoutcobra="cd "$PATH_TO_BRENT_SCRIPTS" && ./open-all-cobra-gits.sh -checkout"
 alias npminstallcobra="cd "$PATH_TO_BRENT_SCRIPTS" && ./open-all-cobra-gits.sh -npmInstall"
 
+# Cobra1 builds
 alias bd="npm run browserDev"
 alias bp="npm run browserProd"
 alias ad="npm run androidDev"
@@ -79,11 +51,49 @@ alias ap="npm run androidProd"
 alias id="npm run iosDev"
 alias ip="npm run iosProd"
 
-alias ll="ls -lh"
+##################################################################
+# Noxml
+alias cdn='cd '$PATH_TO_INTREPICA'noxml'
 
+##################################################################
+# Cobra 2
+export PATH_TO_MONO_REPO=$PATH_TO_INTREPICA'/perforce/lp/monorepo/lp/'
+export PATH_TO_COBRA2=$PATH_TO_MONO_REPO'/client/cobra2/'
+export PATH_TO_SX=$PATH_TO_MONO_REPO'/client/sx/entry/'
+
+alias cdc='cd '$PATH_TO_COBRA2
+alias startc='cd '$PATH_TO_COBRA2' && npm start'
+alias twc='cd '$PATH_TO_COBRA2' && npm run test_watch'
+
+##################################################################
+# Contiki
+alias cdm='cd '$PATH_TO_MONO_REPO
+alias cdsx='cd '$PATH_TO_SX
+
+# start min services needed for student experience, missions and avatar
+# alias sup='cdm && lpdc -c services/sx -c services/students -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets -c services/missions -c services/student_missions up'
+
+# start the bare services needed for client/avatar dev
+alias sup='cdm && lpdc  -c services/sx -c services/students -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets up'
+
+# safely docker down all services
+alias sdown='cdm && lpdc -c services/missions -c services/sx -c services/students -c services/student_missions -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets -c client/sx/entry -c client/backend/entry/ down'
+
+# start contiki avatar/shop dev mounted independently
+alias cdav='cd '$PATH_TO_MONO_REPO'client/sx/avatar'
+alias startav='cdav && builder run lp:start' # make sure you you have also started the min services for avatar - sx, students, avatar, authz, authn, reverse_proxy, assets
+
+# docker ps (shows all remaining docker containers)
+# docker kill fooContainerID
+
+# clear all node modules in children directories
+alias cnm='find . -name "node_modules" -type d -exec rm -r "{}" \;'
+
+
+#########################################################################################################
 # refresh bash/terminal with updated .bash_profile changes - no need to open new tab
-alias sb='source ~/.bash_profile'
-alias test='echo aaa'
+alias sourcebash='source ~/.bash_profile'
+# alias test='echo foo'
 
 #########################################################################################################
 # Git shortcuts
@@ -105,7 +115,7 @@ alias hideHiddenFiles='defaults write com.apple.finder AppleShowAllFiles NO; sud
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 #########################################################################################################
-#Flash Browser Traces in Terminal
+# Flash Browser Traces in Terminal
 alias trace='open -a /Volumes/Macintosh\ HD/Applications/Utilities/Console.app/ ~/Library/Preferences/Macromedia/Flash\ Player/Logs/flashlog.txt'
 alias cleartrace='cat /dev/null > ~/Library/Preferences/Macromedia/Flash\ Player/Logs/flashlog.txt'
 #########################################################################################################
@@ -176,9 +186,9 @@ if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
 # Setting PATH for Python 2.7
 # The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-export PATH
+export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 
+# Needed for monorepo - instructions in intial_setup
 . /Users/brentmcivor/Intrepica/perforce/lp/monorepo/lp/tools/configs/lpconfig
 export PATH="$HOME/.yarn/bin:$PATH"
 
