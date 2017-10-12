@@ -7,7 +7,7 @@ alias cdc="cd "$PATH_TO_BRENT_PROJECTS"common-resources"
 
 ##################################################################
 # 1.7 Flash and legacy
-export PATH_TO_INTREPICA='~/Intrepica/'
+export PATH_TO_INTREPICA='~/Documents/Projects/Intrepica/'
 alias cdi='cd '$PATH_TO_INTREPICA
 alias cdl='cd '$PATH_TO_INTREPICA'literacyplanet/src'
 alias cda='cd '$PATH_TO_INTREPICA'intrepica-assets'
@@ -25,7 +25,7 @@ alias cdapi='cd'$PATH_TO_COBRA'cobra-lp-api'
 alias cdto='cd '$PATH_TO_COBRA'cobra-tools'
 alias cdui='cd '$PATH_TO_COBRA'cobra-ui'
 
-export PATH_TO_BRENT_SCRIPTS="~/Intrepica/brents_scripts/cobra-bash-scripts/"
+export PATH_TO_BRENT_SCRIPTS="~/Documents/Projects/Intrepica/brents_scripts/"
 alias startlp="cd "$PATH_TO_BRENT_SCRIPTS" && ./start-lp.sh -startVagrant"
 alias stoplp="cd "$PATH_TO_BRENT_SCRIPTS" && ./start-lp.sh -stopVagrant"
 alias startcobra1="cd "$PATH_TO_BRENT_SCRIPTS" && ./start-lp.sh -startJustCobra"
@@ -189,7 +189,7 @@ if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 
 # Needed for monorepo - instructions in intial_setup
-. /Users/brentmcivor/Intrepica/perforce/lp/monorepo/lp/tools/configs/lpconfig
+. /Users/brentmcivor/Documents/Projects/Intrepica/perforce/lp/monorepo/lp/tools/configs/lpconfig
 export PATH="$HOME/.yarn/bin:$PATH"
 
 # Needed for client/sx/avatar builder run lp:start
