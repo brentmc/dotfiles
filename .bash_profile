@@ -62,8 +62,8 @@ export PATH_TO_COBRA2=$PATH_TO_MONO_REPO'client/cobra2/'
 export PATH_TO_SX=$PATH_TO_MONO_REPO'client/sx/entry/'
 
 alias cdc='cd '$PATH_TO_COBRA2
-alias startc='cd '$PATH_TO_COBRA2' && npm start'
-alias twc='cd '$PATH_TO_COBRA2' && npm run test_watch'
+alias startc='title cobra && cd '$PATH_TO_COBRA2' && npm start'
+alias twc='title cobra tests && cd '$PATH_TO_COBRA2' && npm run test_watch'
 
 ##################################################################
 # Contiki
@@ -77,14 +77,14 @@ alias cdsx='cd '$PATH_TO_SX
 alias sbuild='cdm && lpdc  -c services/sx -c services/students -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets build'
 
 # start the bare services needed for client/avatar dev
-alias sup='cdm && lpdc  -c services/sx -c services/students -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets up'
+alias sup='title services && cdm && lpdc  -c services/sx -c services/students -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets up'
 
 # safely docker down all services
 alias sdown='cdm && lpdc -c services/missions -c services/sx -c services/students -c services/student_missions -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets -c client/sx/entry -c client/backend/entry/ down'
 
 # start contiki avatar/shop dev mounted independently
 alias cdav='cd '$PATH_TO_MONO_REPO'client/sx/avatar'
-alias startav='cdav && builder run lp:start' # make sure you you have also started the min services for avatar - sx, students, avatar, authz, authn, reverse_proxy, assets
+alias startav='title client/avatar && cdav && builder run lp:start' # make sure you you have also started the min services for avatar - sx, students, avatar, authz, authn, reverse_proxy, assets
 
 # docker ps (shows all remaining docker containers)
 # docker kill fooContainerID
@@ -197,3 +197,18 @@ export PATH="$HOME/.yarn/bin:$PATH"
 
 # Needed for client/sx/avatar builder run lp:start
 export PATH="./node_modules/.bin:${PATH}"
+
+#########################################################################################################
+# setup terminal tab title to the given param
+# if no param is sent through it will default to the directory's location
+# usage: $title foo bar (sets tab title to "foo bar")
+# More Info: https://superuser.com/questions/419775/with-bash-iterm2-how-to-name-tabs
+function title {
+    if [ "$1" ]
+    then
+        unset PROMPT_COMMAND
+        echo -ne "\033]0;${*}\007"
+    else
+        export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
+    fi
+}
