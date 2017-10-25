@@ -92,6 +92,38 @@ alias startav='title client/avatar && cdav && builder run lp:start' # make sure 
 # clear all node modules in children directories
 alias cnm='find . -name "node_modules" -type d -exec rm -r "{}" \;'
 
+#########################################################################################################
+# shows a list of all the processes for the given port
+function showPorts {
+    if [ "$1" ]
+    then
+       lsof -i:$1
+    else
+        echo "Please re-run this function with a port number. e.g. '\$showPorts 3005'"
+    fi
+}
+
+# kills the process for the given PID
+function killPID {
+	if [ "$1" ]
+    then
+       kill -9 $1
+    else
+        echo "Please re-run this function with a PID. e.g. '\$killPID 1383'"
+    fi
+}
+
+# searches for an active port then automatically kills it
+# https://github.com/kevinSuttle/dotfiles/commit/9458141f40094d96952adc7c423cbdddeb909a81
+function killPort {
+	if [ "$1" ]
+	then
+		lsof -i TCP:$1 | grep LISTEN | awk '{print $2}' | xargs kill -9
+	else
+		echo "Please re-run with a port number. e.g. '\$killPort 3005'"
+	fi
+}
+
 
 #########################################################################################################
 # refresh bash/terminal with updated .bash_profile changes - no need to open new tab
