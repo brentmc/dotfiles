@@ -86,6 +86,9 @@ alias sdown='cdm && lpdc -c services/missions -c services/sx -c services/student
 alias cdav='cd '$PATH_TO_MONO_REPO'client/sx/avatar'
 alias startav='title client/avatar && cdav && builder run lp:start' # make sure you you have also started the min services for avatar - sx, students, avatar, authz, authn, reverse_proxy, assets
 
+# start contiki client s
+alias startsx='title client/sx && cdm && lpdc -c client/sx/entry/ up'
+
 # docker ps (shows all remaining docker containers)
 # docker kill fooContainerID
 
