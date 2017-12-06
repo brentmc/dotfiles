@@ -155,6 +155,7 @@ function killPID {
 
 #########################################################################################################
 # refresh bash/terminal with updated .bash_profile changes - no need to open new tab
+alias matebash='mate ~/.bash_profile'
 alias sourcebash='source ~/.bash_profile'
 # alias test='echo foo'
 
