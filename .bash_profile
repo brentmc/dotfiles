@@ -77,23 +77,47 @@ alias cdsx='cd '$PATH_TO_SX
 alias sbuild='cdm && lpdc  -c services/sx -c services/students -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets build'
 
 # start the bare services needed for client/avatar dev
-alias sup='title services && cdm && lpdc  -c services/sx -c services/students -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets up'
+# alias sup='title services && cdm && lpdc  -c services/sx -c services/students -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets up'
+
+# alias sup='title services && cdm && lpdc  -c services/sx -c services/students -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets -c services/student_missions -c services/missions up'
+# alias sup='title services && cdm && lpdc -c services/missions -c services/mesh -c services/sx -c services/reverse_proxy -c services/students -c services/student_missions -c services/authn -c services/authz -c services/avatar -c services/assignments -c services/assets -c client/backend/entry up'
+alias sup='title services && cdm && lpdc -c services/missions -c services/mesh -c services/sx -c services/reverse_proxy -c services/students -c services/student_missions -c services/authn -c services/authz -c services/avatar -c services/assignments -c services/assets up'
+
 
 # safely docker down all services
-alias sdown='cdm && lpdc -c services/missions -c services/sx -c services/students -c services/student_missions -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets -c client/sx/entry -c client/backend/entry/ down'
+alias sdown='cdm && lpdc -c services/missions -c services/mesh -c services/sx -c services/students -c services/student_missions -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets -c client/sx/entry -c client/backend/entry/ down'
 
 # start contiki avatar/shop dev mounted independently
 alias cdav='cd '$PATH_TO_MONO_REPO'client/sx/avatar'
 alias startav='title client/avatar && cdav && builder run lp:start' # make sure you you have also started the min services for avatar - sx, students, avatar, authz, authn, reverse_proxy, assets
 
-# start contiki client s
-alias startsx='title client/sx && cdm && lpdc -c client/sx/entry/ up'
+# start contiki activity dev mounted independently
+alias cdac='cd '$PATH_TO_MONO_REPO'client/sx/activity'
+alias startac='title client/activity && cdac && builder run lp:start' # make sure you you have also started the min services for activity
+
+
+# start contiki client
+alias linkAvatar='yarn link "@literacyplanet/client_avatar"'
+alias linkCobraLauncher='yarn link "@literacyplanet/cobra_launcher"'
+alias linkCore='yarn link "@literacyplanet/client_core"'
+
+alias linkActivities='yarn link "@literacyplanet/client_sx_activity"'
+alias linkShop='yarn link "@literacyplanet/client_sx_avatar"'
+alias linkCollections='yarn link "@literacyplanet/client_sx_collections"'
+alias linkSXHome='yarn link "@literacyplanet/client_sx_home"'
+alias linkSXMissions='yarn link "@literacyplanet/client_sx_missions"'
+
+alias linkContiki='linkAvatar && linkCobraLauncher && linkActivities && linkShop && linkCore && linkCollections && linkSXHome && linkSXMissions'
+# alias startsx='title client/sx && linkCobraLauncher && linkActivities && linkShop && linkCore && cdm && lpdc -c client/sx/entry/ up'
+alias startsx='title client/sx && cdsx && linkContiki && builder run lp:start'
+
 
 # docker ps (shows all remaining docker containers)
 # docker kill fooContainerID
 
 # clear all node modules in children directories
 alias cnm='find . -name "node_modules" -type d -exec rm -r "{}" \;'
+alias resetcobra='cdc && cnm && npm install && startc'
 
 #########################################################################################################
 # shows a list of all the processes for the given port
