@@ -118,14 +118,15 @@ function killPID {
 
 # searches for an active port then automatically kills it
 # https://github.com/kevinSuttle/dotfiles/commit/9458141f40094d96952adc7c423cbdddeb909a81
-function killPort {
-	if [ "$1" ]
-	then
-		lsof -i TCP:$1 | grep LISTEN | awk '{print $2}' | xargs kill -9
-	else
-		echo "Please re-run with a port number. e.g. '\$killPort 3005'"
-	fi
-}
+# commented out for now - seems to kill ALL services for ALL ports
+# function killPort {
+# 	if [ "$1" ]
+# 	then
+# 		lsof -i TCP:$1 | grep LISTEN | awk '{print $2}' | xargs kill -9
+# 	else
+# 		echo "Please re-run with a port number. e.g. '\$killPort 3005'"
+# 	fi
+# }
 
 
 #########################################################################################################
