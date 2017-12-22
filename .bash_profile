@@ -158,6 +158,8 @@ function killPID {
 alias matebash='mate ~/.bash_profile'
 alias sourcebash='source ~/.bash_profile'
 # alias test='echo foo'
+# recursively deletes all DS_Store files in your current directory and children
+alias deleteDS='find . -name '*.DS_Store' -type f -delete -print'
 
 #########################################################################################################
 # Git shortcuts
