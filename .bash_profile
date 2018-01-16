@@ -150,6 +150,14 @@ function killPID {
     fi
 }
 
+## Kills all running docker instances (from Terry)
+## You can change the `kill` to `rm` if you want to remove the container(s) instead of just stopping them.
+## Or change it to `stop` if you want to try to ask them to stop themselves rather than sending a kill signal.
+## And you could add `a` to the docker flags like  `docker ps -qa` to also include stopped containers.
+function dockerK {
+	docker kill $(docker ps -q | awk '{print $1}')
+}
+
 # searches for an active port then automatically kills it
 # https://github.com/kevinSuttle/dotfiles/commit/9458141f40094d96952adc7c423cbdddeb909a81
 # commented out for now - seems to kill ALL services for ALL ports
