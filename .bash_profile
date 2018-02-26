@@ -82,8 +82,8 @@ alias sbuild='cdm && lpdc  -c services/sx -c services/students -c services/avata
 # alias sup='title services && cdm && lpdc  -c services/sx -c services/students -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets -c services/student_missions -c services/missions up'
 # alias sup='title services && cdm && lpdc -c services/missions -c services/mesh -c services/sx -c services/reverse_proxy -c services/students -c services/student_missions -c services/authn -c services/authz -c services/avatar -c services/assignments -c services/assets -c client/backend/entry -c services/collections -c services/superman up'
 
-function sup {
-	services=(missions mesh sx reverse_proxy students student_missions authn authz avatar assignments assets superman collections)
+services=(missions sx reverse_proxy students student_missions authn authz avatar assignments assets superman collections)
+function sup {	
 	servicesCommand='lpdc'
 	for serviceName in "${services[@]}"
 	do
@@ -94,8 +94,19 @@ function sup {
 	eval ${completeCommand}
 }
 
+function sdown {	
+	servicesCommand='lpdc'
+	for serviceName in "${services[@]}"
+	do
+		servicesCommand=$servicesCommand' -c services/'$serviceName
+	done
+	completeCommand='cdm && '$servicesCommand' down'
+	echo 'About to run: '$completeCommand
+	eval ${completeCommand}
+}
+
 # safely docker down all services
-alias sdown='cdm && lpdc -c services/missions -c services/mesh -c services/sx -c services/students -c services/student_missions -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets -c client/sx/entry -c client/backend/entry/ down'
+# alias sdown='cdm && lpdc -c services/missions -c services/mesh -c services/sx -c services/students -c services/student_missions -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets -c client/sx/entry down'
 
 # start contiki avatar/shop dev mounted independently
 alias cdav='cd '$PATH_TO_MONO_REPO'client/sx/avatar'
