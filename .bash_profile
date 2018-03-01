@@ -130,7 +130,7 @@ alias linkSXMissions='yarn link "@literacyplanet/client_sx_missions"'
 
 alias linkContiki='linkAvatar && linkCobraLauncher && linkActivities && linkShop && linkCore && linkCollections && linkSXHome && linkSXMissions'
 # alias startsx='title client/sx && linkCobraLauncher && linkActivities && linkShop && linkCore && cdm && lpdc -c client/sx/entry/ up'
-alias startsx='title client/sx && cdsx && linkContiki && builder run lp:start'
+alias startsx='title client/sx && cdsx && builder run lp:start'
 
 
 # docker ps (shows all remaining docker containers)
