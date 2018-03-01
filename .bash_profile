@@ -132,6 +132,8 @@ alias linkContiki='linkAvatar && linkCobraLauncher && linkActivities && linkShop
 # alias startsx='title client/sx && linkCobraLauncher && linkActivities && linkShop && linkCore && cdm && lpdc -c client/sx/entry/ up'
 alias startsx='title client/sx && cdsx && builder run lp:start'
 
+alias cdft='cd '$PATH_TO_MONO_REPO'tools/force_touch'
+alias startft='title forceTouch && cdft && node src/app.js'
 
 # docker ps (shows all remaining docker containers)
 # docker kill fooContainerID
