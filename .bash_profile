@@ -62,7 +62,7 @@ export PATH_TO_COBRA2=$PATH_TO_MONO_REPO'client/cobra2/'
 export PATH_TO_SX=$PATH_TO_MONO_REPO'client/sx/entry/'
 
 alias cdc='cd '$PATH_TO_COBRA2
-alias startc='title cobra && cd '$PATH_TO_COBRA2' && npm start'
+alias startc='title cobra && cd '$PATH_TO_COBRA2' && COBRA_LOG_LEVEL=debug npm start'
 alias twc='title cobra tests && cd '$PATH_TO_COBRA2' && npm run test_watch'
 
 ##################################################################
@@ -130,7 +130,7 @@ alias linkSXMissions='yarn link "@literacyplanet/client_sx_missions"'
 
 alias linkContiki='linkAvatar && linkCobraLauncher && linkActivities && linkShop && linkCore && linkCollections && linkSXHome && linkSXMissions'
 # alias startsx='title client/sx && linkCobraLauncher && linkActivities && linkShop && linkCore && cdm && lpdc -c client/sx/entry/ up'
-alias startsx='title client/sx && cdsx && builder run lp:start'
+alias startsx='title client/sx && cdsx && COBRA_LOG_LEVEL=debug builder run lp:start'
 
 alias cdft='cd '$PATH_TO_MONO_REPO'tools/force_touch'
 alias startft='title forceTouch && cdft && node src/app.js'
