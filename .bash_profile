@@ -63,6 +63,7 @@ export PATH_TO_SX=$PATH_TO_MONO_REPO'client/sx/entry/'
 
 alias cdc='cd '$PATH_TO_COBRA2
 alias startc='title cobra && cd '$PATH_TO_COBRA2' && COBRA_LOG_LEVEL=debug npm start'
+alias tc='title cobra tests && cd '$PATH_TO_COBRA2' && npm run test'
 alias twc='title cobra tests && cd '$PATH_TO_COBRA2' && npm run test_watch'
 
 ##################################################################
