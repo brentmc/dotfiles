@@ -80,7 +80,7 @@ alias cdsx='cd '$PATH_TO_SX
 # alias sup='title services && cdm && lpdc  -c services/sx -c services/students -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets -c services/student_missions -c services/missions up'
 # alias sup='title services && cdm && lpdc -c services/missions -c services/mesh -c services/sx -c services/reverse_proxy -c services/students -c services/student_missions -c services/authn -c services/authz -c services/avatar -c services/assignments -c services/assets -c client/backend/entry -c services/collections -c services/superman up'
 
-services=(dnsmasq missions sx reverse_proxy student_missions authn authz avatar assignments assets superman collections word_temple)
+services=(dnsmasq sx reverse_proxy student_missions authn authz avatar assets superman collections word_temple)
 function sup {	
 	servicesCommand='lpdc'
 	for serviceName in "${services[@]}"
