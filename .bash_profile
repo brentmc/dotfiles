@@ -73,9 +73,6 @@ alias cdsx='cd '$PATH_TO_SX
 # start min services needed for student experience, missions and avatar
 # alias sup='cdm && lpdc -c services/sx -c services/students -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets -c services/missions -c services/student_missions up'
 
-# rebuild all the packages that are required for an up.
-alias sbuild='cdm && lpdc  -c services/sx -c services/students -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets build'
-
 # start the bare services needed for client/avatar dev
 # alias sup='title services && cdm && lpdc  -c services/sx -c services/students -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets up'
 
@@ -101,6 +98,18 @@ function sdown {
 		servicesCommand=$servicesCommand' -c services/'$serviceName
 	done
 	completeCommand='cdm && '$servicesCommand' down'
+	echo 'About to run: '$completeCommand
+	eval ${completeCommand}
+}
+
+# rebuild all the packages that are required for an up.
+function sbuild {	
+	servicesCommand='lpdc'
+	for serviceName in "${services[@]}"
+	do
+		servicesCommand=$servicesCommand' -c services/'$serviceName
+	done
+	completeCommand='title services && cdm && '$servicesCommand' build'
 	echo 'About to run: '$completeCommand
 	eval ${completeCommand}
 }
