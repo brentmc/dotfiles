@@ -82,7 +82,9 @@ alias cdsx='cd '$PATH_TO_SX
 
 services=(dnsmasq sx reverse_proxy student_missions authn authz avatar assets superman collections word_temple)
 function sup {	
-	servicesCommand='lpdc'
+	# infrastructure/.../assignments automatically generates a new mission when one is completed
+	servicesCommand='lpdc -c infrastructure/utils/contiki_temporary_tasks/assignments'
+	
 	for serviceName in "${services[@]}"
 	do
 		servicesCommand=$servicesCommand' -c services/'$serviceName
