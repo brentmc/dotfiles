@@ -149,6 +149,7 @@ alias bashsx='title bash client/sx && cdm && lpdc -c client/sx/entry exec client
 
 alias cdft='cd '$PATH_TO_MONO_REPO'tools/force_touch'
 alias startft='title forceTouch && cdft && node src/app.js'
+alias startassets='title services/assets && cdm && lpdc -c services/assets up'
 
 # docker ps (shows all remaining docker containers)
 # docker kill fooContainerID
