@@ -57,7 +57,7 @@ alias cdn='cd '$PATH_TO_INTREPICA'noxml'
 
 ##################################################################
 # Cobra 2
-export PATH_TO_MONO_REPO=$PATH_TO_INTREPICA'perforce/lp/monorepo/lp/'
+export PATH_TO_MONO_REPO=$PATH_TO_INTREPICA'contiki/lp-git/'
 export PATH_TO_COBRA2=$PATH_TO_MONO_REPO'client/cobra2/'
 export PATH_TO_SX=$PATH_TO_MONO_REPO'client/sx/entry/'
 
@@ -306,8 +306,15 @@ if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 # The original version is saved in .bash_profile.pysave
 export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 
+# Needed for git p4
+export PATH="/Users/brentmcivor/bin:${PATH}"
+export P4PORT=ssl:acs.literacyplanet.com:1666
+export P4CLIENT=brent_lp_next_work
+export P4USER=brent
+
+
 # Needed for monorepo - instructions in intial_setup
-. /Users/brentmcivor/Intrepica/perforce/lp/monorepo/lp/tools/configs/lpconfig
+. /Users/brentmcivor/Intrepica/contiki/lp-git/tools/configs/lpconfig
 export PATH="$HOME/.yarn/bin:$PATH"
 
 # Needed for client/sx/avatar builder run lp:start
