@@ -66,6 +66,11 @@ alias startc='title cobra && cd '$PATH_TO_COBRA2' && COBRA_LOG_LEVEL=debug npm s
 alias tc='title cobra tests && cd '$PATH_TO_COBRA2' && npm run test'
 alias twc='title cobra tests && cd '$PATH_TO_COBRA2' && npm run test_watch'
 
+# Tests through /client or archetypes/mocha_webpack
+alias tci='title builder test coverage && builder run lp:test_ci'
+alias tw='title builder test watch && builder run lp:test_watch'
+alias tl='title builder lint && builder run lp:lint'
+
 ##################################################################
 # Contiki
 alias cdm='cd '$PATH_TO_MONO_REPO
