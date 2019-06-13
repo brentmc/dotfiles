@@ -314,7 +314,7 @@ export P4USER=brent
 
 
 # Needed for monorepo - instructions in intial_setup
-. /Users/brentmcivor/Intrepica/contiki/lp-git/tools/configs/lpconfig
+. /Users/brentmcivor/Intrepica/contiki/lp-git/tools/configs/lpconfig_git_p4
 export PATH="$HOME/.yarn/bin:$PATH"
 
 # Needed for client/sx/avatar builder run lp:start
