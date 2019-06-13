@@ -60,6 +60,7 @@ alias cdn='cd '$PATH_TO_INTREPICA'noxml'
 export PATH_TO_MONO_REPO=$PATH_TO_INTREPICA'contiki/lp-git/'
 export PATH_TO_COBRA2=$PATH_TO_MONO_REPO'client/cobra2/'
 export PATH_TO_SX=$PATH_TO_MONO_REPO'client/sx/entry/'
+export PATH_TO_MORPH=$PATH_TO_MONO_REPO'services/mocks/morph/'
 
 alias cdc='cd '$PATH_TO_COBRA2
 alias startc='title cobra && cd '$PATH_TO_COBRA2' && COBRA_LOG_LEVEL=debug npm start'
@@ -75,6 +76,7 @@ alias tl='title builder lint && builder run lp:lint'
 # Contiki
 alias cdm='cd '$PATH_TO_MONO_REPO
 alias cdsx='cd '$PATH_TO_SX
+alias cdmorph='cd '$PATH_TO_MORPH
 
 # start min services needed for student experience, missions and avatar
 # alias sup='cdm && lpdc -c services/sx -c services/students -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets -c services/missions -c services/student_missions up'
@@ -151,6 +153,8 @@ alias startsx='title client/sx && cdsx && COBRA_LOG_LEVEL=debug builder run lp:s
 alias upsx='title up client/sx && cdm && lpdc -c client/sx/entry up'
 alias downsx='title down client/sx && cdm && lpdc -c client/sx/entry down'
 alias bashsx='title bash client/sx && cdm && lpdc -c client/sx/entry exec client_sx_entry bash'
+
+alias startMorph='title morph && cdmorph && builder run lp:start'
 
 alias cdft='cd '$PATH_TO_MONO_REPO'tools/force_touch'
 alias startft='title forceTouch && cdft && node src/app.js'
