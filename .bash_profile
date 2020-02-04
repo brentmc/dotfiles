@@ -60,6 +60,7 @@ alias cdn='cd '$PATH_TO_INTREPICA'noxml'
 export PATH_TO_MONO_REPO=$PATH_TO_INTREPICA'contiki/lp-git/'
 export PATH_TO_COBRA2=$PATH_TO_MONO_REPO'client/cobra2/'
 export PATH_TO_SX=$PATH_TO_MONO_REPO'client/sx/entry/'
+export PATH_TO_NEXT_ENTRY=$PATH_TO_MONO_REPO'client/next_entry'
 export PATH_TO_MORPH=$PATH_TO_MONO_REPO'services/mocks/morph/'
 
 alias cdc='cd '$PATH_TO_COBRA2
@@ -76,6 +77,7 @@ alias tl='title builder lint && builder run lp:lint'
 # Contiki
 alias cdm='cd '$PATH_TO_MONO_REPO
 alias cdsx='cd '$PATH_TO_SX
+alias cdne='cd '$PATH_TO_NEXT_ENTRY
 alias cdmorph='cd '$PATH_TO_MORPH
 
 # start min services needed for student experience, missions and avatar
@@ -149,7 +151,9 @@ alias linkSXMissions='yarn link "@literacyplanet/client_sx_missions"'
 
 alias linkContiki='linkAvatar && linkCobraLauncher && linkActivities && linkShop && linkCore && linkCollections && linkSXHome && linkSXMissions'
 # alias startsx='title client/sx && linkCobraLauncher && linkActivities && linkShop && linkCore && cdm && lpdc -c client/sx/entry/ up'
-alias startsx='title client/sx && cdsx && COBRA_LOG_LEVEL=debug builder run lp:start'
+# alias startsx='title client/sx && cdsx && COBRA_LOG_LEVEL=debug builder run lp:start' # Use startne now
+alias startsx='echo Hey Brent, startsx is deprecated. Use startne [next_entry] now.'
+alias startne='title client/next_entry && cdne && COBRA_LOG_LEVEL=debug builder run lp:start'
 alias upsx='title up client/sx && cdm && lpdc -c client/sx/entry up'
 alias downsx='title down client/sx && cdm && lpdc -c client/sx/entry down'
 alias bashsx='title bash client/sx && cdm && lpdc -c client/sx/entry exec client_sx_entry bash'
