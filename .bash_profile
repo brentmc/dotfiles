@@ -328,6 +328,9 @@ export PATH="$HOME/.yarn/bin:$PATH"
 # Needed for client/sx/avatar builder run lp:start
 export PATH="./node_modules/.bin:${PATH}"
 
+# Needed to allow TextMate in MacOS Catalina+
+export EDITOR="/usr/local/bin/mate -w"
+
 #########################################################################################################
 # setup terminal tab title to the given param
 # if no param is sent through it will default to the directory's location
