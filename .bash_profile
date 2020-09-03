@@ -129,6 +129,70 @@ function sbuild {
 # safely docker down all services
 # alias sdown='cdm && lpdc -c services/missions -c services/mesh -c services/sx -c services/students -c services/student_missions -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets -c client/sx/entry down'
 
+cobraModules=(
+	avatar_container
+	characters
+	chest_open
+	chests
+	cobra
+	core
+	core_extended
+	games/code_phrase 
+	games/common
+	games/feed_word_monster
+	games/flash_card
+	games/flash_card_upper
+	games/floating_words
+	games/jigsaw
+	games/memory_game
+	games/monster_chef
+	games/sound_train
+	games/spell_this_word
+	games/spelling_diag
+	games/static_words
+	games/stubmunk_multiple_choice
+	games/stubmunk_sentence
+	games/whack_a_munk
+	games/word_builder
+	games/word_sort
+	journey/activity_select
+	journey/mission_select
+	landscapes
+	popups
+	preloader
+	results
+	student
+	tiles
+	ui
+	word_temple/common
+	word_temple/modes/free_play
+	word_temple/themes/forest
+)
+
+# Test coverage all Cobra modules at once
+function tcac {
+	completeCommand=''
+	for moduleName in "${cobraModules[@]}"
+	do
+		completeCommand=$completeCommand' ttab -d '$PATH_TO_COBRA2'src/'$moduleName' tci;'
+	done
+
+	echo 'About to run: '$completeCommand
+	eval ${completeCommand}
+}
+
+# Lint all Cobra modules at once
+function tlac {
+	completeCommand=''
+	for moduleName in "${cobraModules[@]}"
+	do
+		completeCommand=$completeCommand' ttab -d '$PATH_TO_COBRA2'src/'$moduleName' tl;'
+	done
+
+	echo 'About to run: '$completeCommand
+	eval ${completeCommand}
+}
+
 # start contiki avatar/shop dev mounted independently
 alias cdav='cd '$PATH_TO_MONO_REPO'client/sx/avatar'
 alias startav='title client/avatar && cdav && builder run lp:start' # make sure you you have also started the min services for avatar - sx, students, avatar, authz, authn, reverse_proxy, assets
