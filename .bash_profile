@@ -146,6 +146,7 @@ cobraModules=(
 	games/jigsaw
 	games/memory_game
 	games/monster_chef
+	games/sentence_jumble
 	games/sound_train
 	games/spell_this_word
 	games/spelling_diag
