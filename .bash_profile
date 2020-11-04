@@ -130,6 +130,8 @@ function sbuild {
 # alias sdown='cdm && lpdc -c services/missions -c services/mesh -c services/sx -c services/students -c services/student_missions -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets -c client/sx/entry down'
 
 cobraModules=(
+    arcade/common
+    arcade/sheep_bounce
 	avatar_container
 	characters
 	chest_open
@@ -159,6 +161,7 @@ cobraModules=(
 	journey/activity_select
 	journey/mission_select
 	landscapes
+	physics
 	popups
 	preloader
 	results
