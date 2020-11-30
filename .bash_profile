@@ -132,6 +132,8 @@ function sbuild {
 cobraModules=(
     arcade/common
     arcade/sheep_bounce
+	arcade/block_stack
+	arcade/word_morph
 	avatar_container
 	characters
 	chest_open
