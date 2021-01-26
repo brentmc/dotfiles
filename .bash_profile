@@ -69,9 +69,9 @@ alias tc='title cobra tests && cd '$PATH_TO_COBRA2' && npm run test'
 alias twc='title cobra tests && cd '$PATH_TO_COBRA2' && npm run test_watch'
 
 # Tests through /client or archetypes/mocha_webpack
-alias tci='title builder test coverage && builder run lp:test_ci'
-alias tw='title builder test watch && builder run lp:test_watch'
-alias tl='title builder lint && builder run lp:lint'
+alias tci='builder run lp:test_ci'
+alias tw='builder run lp:test_watch'
+alias tl='builder run lp:lint'
 
 ##################################################################
 # Contiki
@@ -180,7 +180,7 @@ function tcac {
 	completeCommand=''
 	for moduleName in "${cobraModules[@]}"
 	do
-		completeCommand=$completeCommand' ttab -d '$PATH_TO_COBRA2'src/'$moduleName' tci;'
+		completeCommand=$completeCommand' ttab -d '$PATH_TO_COBRA2'src/'$moduleName' -t '$moduleName' builder run lp:test_ci;'
 	done
 
 	echo 'About to run: '$completeCommand
@@ -192,7 +192,7 @@ function tlac {
 	completeCommand=''
 	for moduleName in "${cobraModules[@]}"
 	do
-		completeCommand=$completeCommand' ttab -d '$PATH_TO_COBRA2'src/'$moduleName' tl;'
+		completeCommand=$completeCommand' ttab -d '$PATH_TO_COBRA2'src/'$moduleName' -t '$moduleName' builder run lp:lint;'
 	done
 
 	echo 'About to run: '$completeCommand
