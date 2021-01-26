@@ -386,7 +386,7 @@ export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 
 # Needed for git p4
 export PATH="/Users/brentmcivor/bin:${PATH}"
-export P4PORT=ssl:acs.literacyplanet.com:1666
+export P4PORT=ssl:scm.literacyplanet.com:1666
 export P4CLIENT=brent_lp_next_work
 export P4USER=brent
 
