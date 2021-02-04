@@ -134,6 +134,7 @@ cobraModules=(
     arcade/sheep_bounce
 	arcade/block_stack
 	arcade/word_morph
+	arcade/penpen
 	avatar_container
 	characters
 	chest_open
