@@ -148,6 +148,7 @@ cobraModules=(
 	games/flash_card
 	games/flash_card_upper
 	games/floating_words
+	games/floating_words_alphabetical
 	games/jigsaw
 	games/memory_game
 	games/monster_chef
