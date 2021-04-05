@@ -156,6 +156,7 @@ cobraModules=(
 	games/sound_train
 	games/spell_this_word
 	games/spelling_diag
+	games/snap
 	games/static_words
 	games/stubmunk_multiple_choice
 	games/stubmunk_sentence
