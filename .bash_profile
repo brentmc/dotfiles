@@ -230,6 +230,8 @@ alias upsx='title up client/sx && cdm && lpdc -c client/sx/entry up'
 alias downsx='title down client/sx && cdm && lpdc -c client/sx/entry down'
 alias bashsx='title bash client/sx && cdm && lpdc -c client/sx/entry exec client_sx_entry bash'
 
+alias bsbtx='cdm && cd client/tx/app && bsb -clean-world && bsb -make-world'
+
 alias startMorph='title morph && cdmorph && builder run lp:start'
 
 alias cdft='cd '$PATH_TO_MONO_REPO'tools/force_touch'
