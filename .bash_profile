@@ -162,6 +162,7 @@ cobraModules=(
 	games/stubmunk_sentence
 	games/whack_a_munk
 	games/word_builder
+	games/word_builder_waterfall
 	games/word_sort
 	journey/activity_select
 	journey/mission_select
