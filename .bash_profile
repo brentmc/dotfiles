@@ -171,6 +171,7 @@ cobraModules=(
 	popups
 	preloader
 	results
+	results_paper
 	student
 	tiles
 	ui
