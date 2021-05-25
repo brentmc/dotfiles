@@ -129,19 +129,39 @@ function sbuild {
 # safely docker down all services
 # alias sdown='cdm && lpdc -c services/missions -c services/mesh -c services/sx -c services/students -c services/student_missions -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets -c client/sx/entry down'
 
-cobraModules=(
-    arcade/common
-    arcade/sheep_bounce
-	arcade/block_stack
-	arcade/word_morph
-	arcade/penpen
-	avatar_container
-	characters
-	chest_open
-	chests
+coreModules=(
 	cobra
 	core
 	core_extended
+	physics
+	preloader
+	popups
+	student
+	ui	
+)
+
+currentModules=(
+	results_paper
+)
+
+arcadeModules=(
+	arcade/common
+	arcade/sheep_bounce
+	arcade/block_stack
+	arcade/word_morph
+	arcade/penpen
+)
+		
+studentExperienceModules=(
+	avatar_container
+	characters
+	chests
+	chest_open
+	results_paper
+	tiles
+)	
+
+gameModules=(
 	games/code_phrase 
 	games/common
 	games/feed_word_monster
@@ -164,38 +184,81 @@ cobraModules=(
 	games/word_builder
 	games/word_builder_waterfall
 	games/word_sort
+	landscapes
+)	
+
+journeyModules=(
 	journey/activity_select
 	journey/mission_select
-	landscapes
-	physics
-	popups
-	preloader
-	results
-	results_paper
-	student
-	tiles
-	ui
+)
+	
+wordTempleModules=(
 	word_temple/common
 	word_temple/modes/free_play
 	word_temple/themes/forest
-)
+)	
 
-# Test coverage all Cobra modules at once
-function tcac {
+# Save time and only test the core stuff and your most recent modules
+currentModules=("${coreModules[@]}" "${currentModules[@]}")
+
+# Be thorough and test every module
+allCobraModules=("${coreModules[@]}" "${arcadeModules[@]}" "${studentExperienceModules[@]}" "${gameModules[@]}" "${journeyModules[@]}" "${wordTempleModules[@]}")
+
+function testcore {
+	testCoverage "${coreModules[@]}"
+}
+
+function testcarcade {
+	testCoverage "${arcadeModules[@]}"
+}
+
+function testjourney {
+	testCoverage "${journeyModules[@]}"
+}
+
+function testgames {
+	testCoverage "${gameModules[@]}"
+}
+
+# Test coverage just the core and current modules
+function tcc {
+	testCoverage "${currentModules[@]}"
+}
+
+# Test coverage ALL Cobra modules at once
+function tcall {
+	testCoverage "${allCobraModules[@]}"
+}
+
+# Lint just the core and current modules
+function lc {
+	lintCobra "${currentModules[@]}"
+}
+
+# Lint ALL Cobra modules at once
+function lall {
+	lintCobra "${allCobraModules[@]}"
+}
+
+# Updates test coverage for all given modules
+function testCoverage() {
+	modules=("$@")
+	
 	completeCommand=''
-	for moduleName in "${cobraModules[@]}"
+	for moduleName in "${modules[@]}"
 	do
 		completeCommand=$completeCommand' ttab -d '$PATH_TO_COBRA2'src/'$moduleName' -t '$moduleName' builder run lp:test_ci;'
 	done
-
+    
 	echo 'About to run: '$completeCommand
 	eval ${completeCommand}
 }
 
-# Lint all Cobra modules at once
-function tlac {
+# Lints the given modules
+function lintCobra () {
+	modules=("$@")
 	completeCommand=''
-	for moduleName in "${cobraModules[@]}"
+	for moduleName in "${modules[@]}"
 	do
 		completeCommand=$completeCommand' ttab -d '$PATH_TO_COBRA2'src/'$moduleName' -t '$moduleName' builder run lp:lint;'
 	done
