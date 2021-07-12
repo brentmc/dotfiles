@@ -185,6 +185,7 @@ gameModules=(
 	games/word_builder
 	games/word_builder_card
 	games/word_builder_waterfall
+	games/word_finder
 	games/word_sort
 	landscapes
 )	
