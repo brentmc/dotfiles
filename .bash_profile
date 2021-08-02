@@ -137,7 +137,6 @@ coreModules=(
 	cobra
 	core
 	core_extended
-	physics
 	preloader
 	popups
 	student
@@ -145,10 +144,11 @@ coreModules=(
 )
 
 currentModules=(
-	results_paper
+	word_mania
 )
 
 arcadeModules=(
+	physics
 	arcade/common
 	arcade/sheep_bounce
 	arcade/block_stack
@@ -164,6 +164,7 @@ studentExperienceModules=(
 	chest_open
 	results_paper
 	tiles
+	word_mania
 )	
 
 gameModules=(
