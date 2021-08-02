@@ -80,8 +80,8 @@ alias cdsx='cd '$PATH_TO_SX
 alias cdne='cd '$PATH_TO_NEXT_ENTRY
 alias cdmorph='cd '$PATH_TO_MORPH
 
-alias supPD='title services/prod-sx && cdm && lpdc2 up services_sx_prod'
-alias supAssets='title services/assets && cdm && lpdc2 up services_assets'
+alias supPD='title services/prod-sx && cdm && lpdc2 up sx_prod'
+alias supAssets='title services/assets && cdm && lpdc2 up assets'
 alias startPD='title client/prod-dev && cdne && builder run lp:start_prod_dev'
 
 # start min services needed for student experience, missions and avatar
