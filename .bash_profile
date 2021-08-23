@@ -62,6 +62,7 @@ export PATH_TO_COBRA2=$PATH_TO_MONO_REPO'client/cobra2/'
 export PATH_TO_SX=$PATH_TO_MONO_REPO'client/sx/entry/'
 export PATH_TO_NEXT_ENTRY=$PATH_TO_MONO_REPO'client/next_entry'
 export PATH_TO_MORPH=$PATH_TO_MONO_REPO'services/mocks/morph/'
+export PATH_TO_WORD_MANIA=$PATH_TO_COBRA2'src/word_mania/'
 
 alias cdc='cd '$PATH_TO_COBRA2
 alias startc='title cobra && cd '$PATH_TO_COBRA2' && COBRA_LOG_LEVEL=debug npm start'
@@ -79,6 +80,7 @@ alias cdm='cd '$PATH_TO_MONO_REPO
 alias cdsx='cd '$PATH_TO_SX
 alias cdne='cd '$PATH_TO_NEXT_ENTRY
 alias cdmorph='cd '$PATH_TO_MORPH
+alias cdwm='cd '$PATH_TO_WORD_MANIA
 
 alias supPD='title services/prod-sx && cdm && lpdc2 up sx_prod'
 alias supAssets='title services/assets && cdm && lpdc2 up assets'
