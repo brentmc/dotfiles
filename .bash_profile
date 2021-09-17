@@ -208,11 +208,18 @@ wordTempleModules=(
 	word_temple/themes/forest
 )	
 
+miniGameModules=(
+	mini_games/common
+	mini_games/breakout_penguin
+	mini_games/treasure_crab
+	mini_games/whack_a_pirate
+)
+
 # Save time and only test the core stuff and your most recent modules
 currentModules=("${coreModules[@]}" "${currentModules[@]}")
 
 # Be thorough and test every module
-allCobraModules=("${coreModules[@]}" "${arcadeModules[@]}" "${studentExperienceModules[@]}" "${gameModules[@]}" "${journeyModules[@]}" "${wordTempleModules[@]}")
+allCobraModules=("${coreModules[@]}" "${arcadeModules[@]}" "${studentExperienceModules[@]}" "${gameModules[@]}" "${journeyModules[@]}" "${wordTempleModules[@]}" "${miniGameModules[@]}")
 
 function testcore {
 	testCoverage "${coreModules[@]}"
