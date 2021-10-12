@@ -65,11 +65,12 @@ export PATH_TO_MORPH=$PATH_TO_MONO_REPO'services/mocks/morph/'
 export PATH_TO_WORD_MANIA=$PATH_TO_COBRA2'src/word_mania/'
 export PATH_TO_JOURNEY_MISSION_SELECT=$PATH_TO_COBRA2'src/journey/mission_select'
 export PATH_TO_AVATAR=$PATH_TO_COBRA2'src/characters/src/avatar'
+export PATH_TO_DEV_LAUNCHER=$PATH_TO_COBRA2'src/dev_launcher'
 
 alias cdc='cd '$PATH_TO_COBRA2
-alias startc='title cobra && cd '$PATH_TO_COBRA2' && COBRA_LOG_LEVEL=debug npm start'
 alias tc='title cobra tests && cd '$PATH_TO_COBRA2' && npm run test'
 alias twc='title cobra tests && cd '$PATH_TO_COBRA2' && npm run test_watch'
+alias startc='title cobra && cd '$PATH_TO_DEV_LAUNCHER' && builder run lp:start'
 
 # Tests through /client or archetypes/mocha_webpack
 alias tci='builder run lp:test_ci'
@@ -85,6 +86,7 @@ alias cdmorph='cd '$PATH_TO_MORPH
 alias cdwm='cd '$PATH_TO_WORD_MANIA
 alias cdjms='cd '$PATH_TO_JOURNEY_MISSION_SELECT
 alias cdav='cd '$PATH_TO_AVATAR
+alias cddl='cd '$PATH_TO_DEV_LAUNCHER
 
 alias supPD='title services/prod-sx && cdm && lpdc2 up sx_prod'
 alias supAssets='title services/assets && cdm && lpdc2 up assets'
