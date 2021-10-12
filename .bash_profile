@@ -75,6 +75,10 @@ alias tci='builder run lp:test_ci'
 alias tw='builder run lp:test_watch'
 alias tl='builder run lp:lint'
 
+alias generateModule='cdc && sh ./tools/generate_new_cobra_module.sh'
+alias generateGame='cdc && sh ./tools/generate_new_cobra_game.sh'
+alias generateArcadeGame='cdc && sh ./tools/generate_new_cobra_arcade_game.sh'
+
 ##################################################################
 # Contiki
 alias cdm='cd '$PATH_TO_MONO_REPO
