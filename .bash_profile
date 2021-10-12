@@ -68,8 +68,6 @@ export PATH_TO_AVATAR=$PATH_TO_COBRA2'src/characters/src/avatar'
 export PATH_TO_DEV_LAUNCHER=$PATH_TO_COBRA2'src/dev_launcher'
 
 alias cdc='cd '$PATH_TO_COBRA2
-alias tc='title cobra tests && cd '$PATH_TO_COBRA2' && npm run test'
-alias twc='title cobra tests && cd '$PATH_TO_COBRA2' && npm run test_watch'
 alias startc='title cobra && cd '$PATH_TO_DEV_LAUNCHER' && builder run lp:start'
 
 # Tests through /client or archetypes/mocha_webpack
