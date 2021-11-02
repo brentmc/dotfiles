@@ -191,7 +191,7 @@ gameModules=(
 	games/sentence_jumble
 	games/sound_train
 	games/spell_this_word
-	games/spelling_diag
+	# games/spelling_diag
 	games/snap
 	games/static_words
 	games/stubmunk_multiple_choice
@@ -210,11 +210,11 @@ journeyModules=(
 	journey/mission_select
 )
 	
-wordTempleModules=(
-	word_temple/common
-	word_temple/modes/free_play
-	word_temple/themes/forest
-)	
+# wordTempleModules=(
+# 	word_temple/common
+# 	word_temple/modes/free_play
+# 	word_temple/themes/forest
+# )	
 
 miniGameModules=(
 	mini_games/common
@@ -227,7 +227,7 @@ miniGameModules=(
 currentModules=("${coreModules[@]}" "${currentModules[@]}")
 
 # Be thorough and test every module
-allCobraModules=("${coreModules[@]}" "${arcadeModules[@]}" "${studentExperienceModules[@]}" "${gameModules[@]}" "${journeyModules[@]}" "${wordTempleModules[@]}" "${miniGameModules[@]}")
+allCobraModules=("${coreModules[@]}" "${arcadeModules[@]}" "${studentExperienceModules[@]}" "${gameModules[@]}" "${journeyModules[@]}" "${miniGameModules[@]}")
 
 function testcore {
 	testCoverage "${coreModules[@]}"
