@@ -210,6 +210,7 @@ gameModules=(
 journeyModules=(
 	journey/activity_select
 	journey/mission_select
+	journey/welcome_tutorial
 )
 	
 # wordTempleModules=(
