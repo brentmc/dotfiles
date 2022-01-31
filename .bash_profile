@@ -79,6 +79,7 @@ alias tl='builder run lp:lint'
 alias generateModule='cdc && sh ./tools/generate_new_cobra_module.sh'
 alias generateGame='cdc && sh ./tools/generate_new_cobra_game.sh'
 alias generateArcadeGame='cdc && sh ./tools/generate_new_cobra_arcade_game.sh'
+alias generateJMSLocation='cdc && sh ./tools/generate_new_cobra_jms_location.sh'
 
 ##################################################################
 # Contiki
