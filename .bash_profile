@@ -176,7 +176,7 @@ studentExperienceModules=(
 	chests
 	chest_open
 	results_paper
-	tiles
+	# tiles
 	word_mania
 )	
 
