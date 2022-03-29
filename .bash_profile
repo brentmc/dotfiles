@@ -95,7 +95,7 @@ alias cdav='cd '$PATH_TO_AVATAR
 alias cddl='cd '$PATH_TO_DEV_LAUNCHER
 
 alias supPD='title services/prod-sx && cdm && lpdc2 up sx_prod'
-alias supAssets='title services/assets && cdm && lpdc2 up assets'
+alias supAssets='title services/assets && cdm && lpdc2 up reverse_proxy assets' # Now need reverse_proxy so local independent Cobra works when process.env.ASSETS_URL === https:assets.lp.test/assets
 alias startPD='title client/prod-dev && cdne && builder run lp:start_prod_dev'
 
 # start min services needed for student experience, missions and avatar
