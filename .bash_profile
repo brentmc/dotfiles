@@ -68,8 +68,9 @@ export PATH_TO_JOURNEY_MISSION_SELECT=$PATH_TO_COBRA2'src/journey/mission_select
 export PATH_TO_AVATAR=$PATH_TO_COBRA2'src/characters/src/avatar'
 export PATH_TO_DEV_LAUNCHER=$PATH_TO_COBRA2'src/dev_launcher'
 
-alias cdc='cd '$PATH_TO_COBRA2
-alias startc='title cobra && cd '$PATH_TO_DEV_LAUNCHER' && COBRA_LOG_LEVEL=debug SERVER_PORT=3037 builder run lp:start'
+alias cdc='cd '$PATH_TO_COBRA2 
+#alias startc='title cobra && cd '$PATH_TO_COBRA2' && COBRA_LOG_LEVEL=debug npm run start' #Use for Cobra before Node 16
+alias startc='title cobra && cd '$PATH_TO_DEV_LAUNCHER' && COBRA_LOG_LEVEL=debug SERVER_PORT=3037 builder run lp:start' #Use for Node 16+
 
 # Tests through /client or archetypes/mocha_webpack
 alias tci='builder run lp:test_ci'
