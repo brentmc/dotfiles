@@ -327,7 +327,7 @@ alias downsx='title down client/sx && cdm && lpdc -c client/sx/entry down'
 alias bashsx='title bash client/sx && cdm && lpdc -c client/sx/entry exec client_sx_entry bash'
 
 alias bsbtx='cdm && cd client/tx/app && bsb -clean-world && bsb -make-world'
-alias bsbne='cdm && cd client/next_entry && bsb -clean-world && bsb -make-world'
+alias bsbne='cdm && cd client/next_entry && bsb -clean-world -make-world'
 
 alias startMorph='title morph && cdmorph && builder run lp:start'
 
