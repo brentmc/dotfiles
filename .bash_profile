@@ -424,6 +424,27 @@ alias compileURLVars='compc -output ~/Intrepica/literacyplanet/swc/thirdparty/UR
 
 
 #########################################################################################################
+# LiteracyPlanet Student App tablet release tagging helper functions
+# Use these to quickly tag releases without having to think about the consistent naming convention
+function tagAndroid {
+	echo "What is the version number? e.g. 1.23.0";
+	read versionNum;	
+	
+	completeCommand='git tag lpsx-v'$versionNum'-android'
+	echo 'About to run: '$completeCommand
+	eval ${completeCommand}
+}
+
+function tagIOS {
+	echo "What is the version number? e.g. 1.23.0";
+	read versionNum;	
+	
+	completeCommand='git tag lpsx-v'$versionNum'-ios'
+	echo 'About to run: '$completeCommand
+	eval ${completeCommand}
+}
+
+#########################################################################################################
 # Git Flow stuff
 #########################################################################################################
 # Set git auto'tion and PS1 integration
