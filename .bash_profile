@@ -147,6 +147,15 @@ function sbuild {
 # safely docker down all services
 # alias sdown='cdm && lpdc -c services/missions -c services/mesh -c services/sx -c services/students -c services/student_missions -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets -c client/sx/entry down'
 
+# Start local services in tilt
+function tupl {
+	command='tilt up sx services consumers frontend'
+	completeCommand='title local tilt && cdm && '$command''
+	echo 'About to run: '$command
+	echo 'Launch from http://spa.lp.test:3005/sx/home'
+	eval ${completeCommand}
+}
+
 coreModules=(
 	cobra
 	core
