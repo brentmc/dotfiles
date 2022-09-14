@@ -154,7 +154,7 @@ function sbuild {
 
 # Start local services in tilt
 function tupl {
-	command='tilt up sx services consumers frontend'
+	command='tilt up sx services consumers frontend lp_webapp'
 	completeCommand='title local tilt && cdm && '$command''
 	echo 'About to run: '$command
 	echo 'Launch from http://spa.lp.test:3005/sx/home'
