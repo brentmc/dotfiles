@@ -183,6 +183,7 @@ arcadeModules=(
 	arcade/word_morph
 	arcade/penpen
 	arcade/turtle_knock
+	arcade/hangman
 )
 		
 studentExperienceModules=(
@@ -204,6 +205,7 @@ gameModules=(
 	games/floating_words
 	games/floating_words_alphabetical
 	games/jigsaw
+	games/letter_drop	
 	games/memory_game
 	games/monster_chef
 	games/sentence_jumble
