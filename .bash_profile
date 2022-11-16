@@ -191,6 +191,7 @@ studentExperienceModules=(
 	characters
 	chests
 	chest_open
+	collections
 	results_paper
 	# tiles
 	word_mania
