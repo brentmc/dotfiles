@@ -261,6 +261,10 @@ function testarcade {
 	testCoverage "${arcadeModules[@]}"
 }
 
+function teststudentexperience {
+	testCoverage "${studentExperienceModules[@]}"
+}
+
 function testjourney {
 	testCoverage "${journeyModules[@]}"
 }
@@ -268,6 +272,11 @@ function testjourney {
 function testgames {
 	testCoverage "${gameModules[@]}"
 }
+
+function testminigames {
+	testCoverage "${miniGameModules[@]}"
+}
+
 
 # Test coverage just the core and current modules
 function tcc {
