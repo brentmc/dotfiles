@@ -257,7 +257,7 @@ function testcore {
 	testCoverage "${coreModules[@]}"
 }
 
-function testcarcade {
+function testarcade {
 	testCoverage "${arcadeModules[@]}"
 }
 
