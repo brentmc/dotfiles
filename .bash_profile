@@ -199,7 +199,7 @@ studentExperienceModules=(
 	word_mania
 )	
 
-gameModules=(
+gameModules01=(
 	games/code_phrase 
 	games/common
 	games/feed_word_monster
@@ -214,6 +214,9 @@ gameModules=(
 	games/sentence_jumble
 	games/sound_train
 	games/spell_this_word
+)	
+
+gameModules02=(
 	# games/spelling_diag
 	games/snap
 	games/static_words
@@ -251,7 +254,7 @@ miniGameModules=(
 currentModules=("${coreModules[@]}" "${currentModules[@]}")
 
 # Be thorough and test every module
-allCobraModules=("${coreModules[@]}" "${arcadeModules[@]}" "${studentExperienceModules[@]}" "${gameModules[@]}" "${journeyModules[@]}" "${miniGameModules[@]}")
+allCobraModules=("${coreModules[@]}" "${arcadeModules[@]}" "${studentExperienceModules[@]}" "${gameModules01[@]}" "${gameModules02[@]}" "${journeyModules[@]}" "${miniGameModules[@]}")
 
 function testcore {
 	testCoverage "${coreModules[@]}"
@@ -269,8 +272,12 @@ function testjourney {
 	testCoverage "${journeyModules[@]}"
 }
 
-function testgames {
-	testCoverage "${gameModules[@]}"
+function testgames01 {
+	testCoverage "${gameModules01[@]}"
+}
+
+function testgames02 {
+	testCoverage "${gameModules02[@]}"
 }
 
 function testminigames {
