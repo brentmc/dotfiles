@@ -197,6 +197,8 @@ studentExperienceModules=(
 	results_paper
 	# tiles
 	word_mania
+	gems
+	tokens
 )	
 
 gameModules01=(
