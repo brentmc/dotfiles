@@ -199,6 +199,7 @@ studentExperienceModules=(
 	word_mania
 	gems
 	tokens
+	scrollers
 )	
 
 gameModules01=(
