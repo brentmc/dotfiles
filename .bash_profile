@@ -71,6 +71,7 @@ export PATH_TO_DEV_LAUNCHER=$PATH_TO_COBRA2'src/dev_launcher'
 export PATH_TO_LETTER_DROP=$PATH_TO_COBRA2'src/games/letter_drop'
 export PATH_TO_HANGMAN=$PATH_TO_COBRA2'src/arcade/hangman'
 export PATH_TO_SHOP=$PATH_TO_COBRA2'src/shop'
+export PATH_TO_MAIL=$PATH_TO_COBRA2'src/mail'
 
 alias cdc='cd '$PATH_TO_COBRA2 
 #alias startc='title cobra && cd '$PATH_TO_COBRA2' && COBRA_LOG_LEVEL=debug npm run start' #Use for Cobra before Node 16
@@ -102,6 +103,7 @@ alias cddl='cd '$PATH_TO_DEV_LAUNCHER
 alias cdld='cd '$PATH_TO_LETTER_DROP
 alias cdhm='cd '$PATH_TO_HANGMAN
 alias cdshop='cd '$PATH_TO_SHOP
+alias cdmail='cd '$PATH_TO_MAIL
 
 alias supPD='title services/prod-sx && cdm && lpdc2 up sx_prod'
 alias supAssets='title services/assets && cdm && lpdc2 up reverse_proxy assets' # Now need reverse_proxy so local independent  works when process.env.ASSETS_URL === https://assets.lp.test/assets
@@ -176,7 +178,7 @@ coreModules=(
 )
 
 currentModules=(
-	word_mania
+	mail
 )
 
 arcadeModules=(
@@ -203,6 +205,7 @@ studentExperienceModules=(
 	tokens
 	scrollers
 	shop
+	mail
 )	
 
 gameModules01=(
