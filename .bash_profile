@@ -77,6 +77,8 @@ export PATH_TO_MAIL=$PATH_TO_COBRA2'src/mail'
 alias cdc='cd '$PATH_TO_COBRA2 
 #alias startc='title cobra && cd '$PATH_TO_COBRA2' && COBRA_LOG_LEVEL=debug npm run start' #Use for Cobra before Node 16
 alias startc='title cobra && cd '$PATH_TO_DEV_LAUNCHER' && COBRA_LOG_LEVEL=debug SERVER_PORT=3037 builder run lp:start' #Use for Node 16+
+alias buildIOS='title build iOS && cd '$PATH_TO_NEXT_ENTRY' && sh ./buildIOSProd.sh'
+alias buildAndroid='title build Android && cd '$PATH_TO_NEXT_ENTRY' && sh ./buildAndroidProd.sh'
 
 # Tests through /client or archetypes/mocha_webpack
 alias tci='builder run lp:test_ci'
