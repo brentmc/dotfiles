@@ -82,7 +82,7 @@ alias buildIOS='title build iOS && cd '$PATH_TO_NEXT_ENTRY' && sh ./buildIOSProd
 alias buildAndroid='title build Android && cd '$PATH_TO_NEXT_ENTRY' && sh ./buildAndroidProd.sh'
 
 # Tests through /client or archetypes/mocha_webpack
-alias tci='yarn run lp:test_ci'
+alias tci='yarn run lp:test' # previously this was lp:test_ci but tests were no longer running after the Node 20 upgrade and code coverage reports were broken anyway
 alias tw='yarn run lp:test_watch'
 alias tl='yarn run lp:lint'
 
