@@ -574,6 +574,10 @@ export PATH="./node_modules/.bin:${PATH}"
 # Needed to allow TextMate in MacOS Catalina+
 export EDITOR="/usr/local/bin/mate -w"
 
+# Needed for FontAwesome after we upgraded our security
+export FONT_AWESOME_AUTH_TOKEN="A1A457CD-5D8D-46D0-B1F6-AFE99325FD27"
+export NPM_FA_AUTH_TOKEN="A1A457CD-5D8D-46D0-B1F6-AFE99325FD27"
+
 #########################################################################################################
 # setup terminal tab title to the given param
 # if no param is sent through it will default to the directory's location
