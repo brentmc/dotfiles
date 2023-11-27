@@ -76,14 +76,15 @@ export PATH_TO_MAIL=$PATH_TO_COBRA2'src/mail'
 
 alias cdc='cd '$PATH_TO_COBRA2 
 #alias startc='title cobra && cd '$PATH_TO_COBRA2' && COBRA_LOG_LEVEL=debug npm run start' #Use for Cobra before Node 16
-alias startc='title cobra && cd '$PATH_TO_DEV_LAUNCHER' && COBRA_LOG_LEVEL=debug SERVER_PORT=3037 builder run lp:start' #Use for Node 16+
+#alias startc='title cobra && cd '$PATH_TO_DEV_LAUNCHER' && COBRA_LOG_LEVEL=debug SERVER_PORT=3037 builder run lp:start' #Use for Node 16+
+alias startc='title cobra && cd '$PATH_TO_DEV_LAUNCHER' && COBRA_LOG_LEVEL=debug SERVER_PORT=3037 yarn run lp:start' #Use for Node 20+
 alias buildIOS='title build iOS && cd '$PATH_TO_NEXT_ENTRY' && sh ./buildIOSProd.sh'
 alias buildAndroid='title build Android && cd '$PATH_TO_NEXT_ENTRY' && sh ./buildAndroidProd.sh'
 
 # Tests through /client or archetypes/mocha_webpack
-alias tci='builder run lp:test_ci'
-alias tw='builder run lp:test_watch'
-alias tl='builder run lp:lint'
+alias tci='yarn run lp:test_ci'
+alias tw='yarn run lp:test_watch'
+alias tl='yarn run lp:lint'
 
 alias generateModule='cdc && sh ./tools/generate_new_cobra_module.sh'
 alias generateGame='cdc && sh ./tools/generate_new_cobra_game.sh'
@@ -112,7 +113,7 @@ alias cdmail='cd '$PATH_TO_MAIL
 
 alias supPD='title services/prod-sx && cdm && lpdc2 up sx_prod'
 alias supAssets='title services/assets && cdm && lpdc2 up reverse_proxy assets' # Now need reverse_proxy so local independent  works when process.env.ASSETS_URL === https://assets.lp.test/assets
-alias startPD='title client/prod-dev && cdne && builder run lp:start_prod_dev'
+alias startPD='title client/prod-dev && cdne && yarn run lp:start_prod_dev'
 
 # start min services needed for student experience, missions and avatar
 # alias sup='cdm && lpdc -c services/sx -c services/students -c services/avatar -c services/authz -c services/authn -c services/reverse_proxy -c services/assets -c services/missions -c services/student_missions up'
@@ -326,7 +327,8 @@ function testCoverage() {
 	completeCommand=''
 	for moduleName in "${modules[@]}"
 	do
-		completeCommand=$completeCommand' ttab -d '$PATH_TO_COBRA2'src/'$moduleName' -t '$moduleName' builder run lp:test_ci;'
+		#completeCommand=$completeCommand' ttab -d '$PATH_TO_COBRA2'src/'$moduleName' -t '$moduleName' builder run lp:test_ci;'
+		completeCommand=$completeCommand' ttab -d '$PATH_TO_COBRA2'src/'$moduleName' -t '$moduleName' yarn run lp:test_ci;'
 	done
     
 	echo 'About to run: '$completeCommand
@@ -339,7 +341,8 @@ function lintCobra () {
 	completeCommand=''
 	for moduleName in "${modules[@]}"
 	do
-		completeCommand=$completeCommand' ttab -d '$PATH_TO_COBRA2'src/'$moduleName' -t '$moduleName' builder run lp:lint;'
+		#completeCommand=$completeCommand' ttab -d '$PATH_TO_COBRA2'src/'$moduleName' -t '$moduleName' builder run lp:lint;'
+		completeCommand=$completeCommand' ttab -d '$PATH_TO_COBRA2'src/'$moduleName' -t '$moduleName' yarn run lp:lint;'
 	done
 
 	echo 'About to run: '$completeCommand
@@ -370,7 +373,7 @@ alias linkContiki='linkAvatar && linkCobraLauncher && linkActivities && linkShop
 # alias startsx='title client/sx && linkCobraLauncher && linkActivities && linkShop && linkCore && cdm && lpdc -c client/sx/entry/ up'
 # alias startsx='title client/sx && cdsx && COBRA_LOG_LEVEL=debug builder run lp:start' # Use startne now
 alias startsx='echo Hey Brent, startsx is deprecated. Use startne [next_entry] now.'
-alias startne='title client/next_entry && cdne && COBRA_LOG_LEVEL=debug builder run lp:start'
+alias startne='title client/next_entry && cdne && COBRA_LOG_LEVEL=debug yarn run lp:start'
 alias upsx='title up client/sx && cdm && lpdc -c client/sx/entry up'
 alias downsx='title down client/sx && cdm && lpdc -c client/sx/entry down'
 alias bashsx='title bash client/sx && cdm && lpdc -c client/sx/entry exec client_sx_entry bash'
@@ -378,7 +381,7 @@ alias bashsx='title bash client/sx && cdm && lpdc -c client/sx/entry exec client
 alias bsbtx='cdm && cd client/tx/app && bsb -clean-world && bsb -make-world'
 alias bsbne='cdm && cd client/next_entry && bsb -clean-world -make-world'
 
-alias startMorph='title morph && cdmorph && builder run lp:start'
+#alias startMorph='title morph && cdmorph && builder run lp:start'
 
 alias cdft='cd '$PATH_TO_MONO_REPO'tools/force_touch'
 alias startft='title forceTouch && cdft && node src/app.js'
