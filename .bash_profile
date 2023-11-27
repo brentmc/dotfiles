@@ -243,6 +243,7 @@ gameModules02=(
 	games/word_builder_waterfall
 	games/word_finder
 	games/word_sort
+	games/sound_card
 	landscapes
 )	
 
