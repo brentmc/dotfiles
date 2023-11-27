@@ -328,7 +328,7 @@ function testCoverage() {
 	for moduleName in "${modules[@]}"
 	do
 		#completeCommand=$completeCommand' ttab -d '$PATH_TO_COBRA2'src/'$moduleName' -t '$moduleName' builder run lp:test_ci;'
-		completeCommand=$completeCommand' ttab -d '$PATH_TO_COBRA2'src/'$moduleName' -t '$moduleName' yarn run lp:test_ci;'
+		completeCommand=$completeCommand' ttab -d '$PATH_TO_COBRA2'src/'$moduleName' -t '$moduleName' yarn run lp:test;'  # previously this was lp:test_ci but tests were no longer running after the Node 20 upgrade and code coverage reports were broken anyway
 	done
     
 	echo 'About to run: '$completeCommand
