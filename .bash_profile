@@ -110,6 +110,11 @@ alias cdld='cd '$PATH_TO_LETTER_DROP
 alias cdhm='cd '$PATH_TO_HANGMAN
 alias cdshop='cd '$PATH_TO_SHOP
 alias cdmail='cd '$PATH_TO_MAIL
+alias cdsc='cd '$PATH_TO_COBRA2'src/games/sound_card'
+alias cdlh='cd '$PATH_TO_COBRA2'src/games/letter_hunt'
+alias cdsh='cd '$PATH_TO_COBRA2'src/games/sound_hunt'
+alias cdwh='cd '$PATH_TO_COBRA2'src/games/word_hunt'
+alias cdph='cd '$PATH_TO_COBRA2'src/games/picture_hunt'
 
 alias supPD='title services/prod-sx && cdm && lpdc2 up sx_prod'
 alias supAssets='title services/assets && cdm && lpdc2 up reverse_proxy assets' # Now need reverse_proxy so local independent  works when process.env.ASSETS_URL === https://assets.lp.test/assets
