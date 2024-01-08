@@ -62,19 +62,8 @@ export PATH_TO_SX=$PATH_TO_MONO_REPO'client/sx/entry/'
 export PATH_TO_NEXT_ENTRY=$PATH_TO_MONO_REPO'client/next_entry'
 export PATH_TO_MORPH=$PATH_TO_MONO_REPO'services/mocks/morph/'
 export PATH_TO_CORE=$PATH_TO_COBRA2'src/core/'
-export PATH_TO_UI=$PATH_TO_COBRA2'src/ui/'
-export PATH_TO_WORD_MANIA=$PATH_TO_COBRA2'src/word_mania/'
-export PATH_TO_JOURNEY_WELCOME_TUTORIAL=$PATH_TO_COBRA2'src/journey/welcome_tutorial'
-export PATH_TO_JOURNEY_MISSION_SELECT=$PATH_TO_COBRA2'src/journey/mission_select'
-export PATH_TO_JOURNEY_ACTIVITY_SELECT=$PATH_TO_COBRA2'src/journey/activity_select'
-export PATH_TO_AVATAR=$PATH_TO_COBRA2'src/characters/src/avatar'
 export PATH_TO_DEV_LAUNCHER=$PATH_TO_COBRA2'src/dev_launcher'
-export PATH_TO_LETTER_DROP=$PATH_TO_COBRA2'src/games/letter_drop'
-export PATH_TO_HANGMAN=$PATH_TO_COBRA2'src/arcade/hangman'
-export PATH_TO_SHOP=$PATH_TO_COBRA2'src/shop'
-export PATH_TO_MAIL=$PATH_TO_COBRA2'src/mail'
 
-alias cdc='cd '$PATH_TO_COBRA2 
 #alias startc='title cobra && cd '$PATH_TO_COBRA2' && COBRA_LOG_LEVEL=debug npm run start' #Use for Cobra before Node 16
 #alias startc='title cobra && cd '$PATH_TO_DEV_LAUNCHER' && COBRA_LOG_LEVEL=debug SERVER_PORT=3037 builder run lp:start' #Use for Node 16+
 alias startc='title cobra && cd '$PATH_TO_DEV_LAUNCHER' && COBRA_LOG_LEVEL=debug SERVER_PORT=3037 yarn run lp:start' #Use for Node 20+
@@ -92,24 +81,26 @@ alias generateArcadeGame='cdc && sh ./tools/generate_new_cobra_arcade_game.sh'
 alias generateJMSLocation='cdc && sh ./tools/generate_new_cobra_jms_location.sh'
 alias generateLDTheme='cdc && sh ./tools/generate_new_cobra_ld_theme.sh'
 
-##################################################################
-# Contiki
+alias cdc='cd '$PATH_TO_COBRA2 
 alias cdm='cd '$PATH_TO_MONO_REPO
 alias cdsx='cd '$PATH_TO_SX
 alias cdne='cd '$PATH_TO_NEXT_ENTRY
 alias cdmorph='cd '$PATH_TO_MORPH
 alias cdcore='cd '$PATH_TO_CORE
-alias cdui='cd '$PATH_TO_UI
-alias cdwm='cd '$PATH_TO_WORD_MANIA
-alias cdjwt='cd '$PATH_TO_JOURNEY_WELCOME_TUTORIAL
-alias cdjms='cd '$PATH_TO_JOURNEY_MISSION_SELECT
-alias cdjas='cd '$PATH_TO_JOURNEY_ACTIVITY_SELECT
-alias cdav='cd '$PATH_TO_AVATAR
 alias cddl='cd '$PATH_TO_DEV_LAUNCHER
-alias cdld='cd '$PATH_TO_LETTER_DROP
-alias cdhm='cd '$PATH_TO_HANGMAN
-alias cdshop='cd '$PATH_TO_SHOP
-alias cdmail='cd '$PATH_TO_MAIL
+
+alias cdui='cd '$PATH_TO_COBRA2'src/ui/'
+alias cdwm='cd '$PATH_TO_COBRA2'src/word_mania/'
+alias cdjwt='cd '$PATH_TO_COBRA2'src/journey/welcome_tutorial'
+alias cdjms='cd '$PATH_TO_COBRA2'src/journey/mission_select'
+alias cdjas='cd '$PATH_TO_COBRA2'src/journey/activity_select'
+alias cdav='cd '$PATH_TO_COBRA2'src/characters/src/avatar'
+
+alias cdhm='cd '$PATH_TO_COBRA2'src/arcade/hangman'
+alias cdshop='cd '$PATH_TO_COBRA2'src/shop'
+alias cdmail='cd '$PATH_TO_COBRA2'src/mail'
+
+alias cdld='cd '$PATH_TO_COBRA2'src/games/letter_drop'
 alias cdsc='cd '$PATH_TO_COBRA2'src/games/sound_card'
 alias cdlh='cd '$PATH_TO_COBRA2'src/games/letter_hunt'
 alias cdsh='cd '$PATH_TO_COBRA2'src/games/sound_hunt'
