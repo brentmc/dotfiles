@@ -184,7 +184,11 @@ coreModules=(
 )
 
 currentModules=(
-	mail
+	games/sound_card
+	games/letter_hunt
+	games/sount_hunt
+	games/word_hunt
+	games/picture_hunt
 )
 
 arcadeModules=(
@@ -223,7 +227,6 @@ gameModules01=(
 	games/floating_words
 	games/floating_words_alphabetical
 	games/jigsaw
-	games/letter_drop	
 	games/memory_game
 	games/monster_chef
 	games/sentence_jumble
@@ -243,9 +246,18 @@ gameModules02=(
 	games/word_builder_waterfall
 	games/word_finder
 	games/word_sort
-	games/sound_card
 	landscapes
 )	
+
+# New Phonics games for 2023/2024
+gameModules03=(
+	games/letter_drop	
+	games/sound_card
+	games/letter_hunt
+	games/sount_hunt
+	games/word_hunt
+	games/picture_hunt
+)
 
 journeyModules=(
 	journey/activity_select
@@ -270,7 +282,7 @@ miniGameModules=(
 currentModules=("${coreModules[@]}" "${currentModules[@]}")
 
 # Be thorough and test every module
-allCobraModules=("${coreModules[@]}" "${arcadeModules[@]}" "${studentExperienceModules[@]}" "${gameModules01[@]}" "${gameModules02[@]}" "${journeyModules[@]}" "${miniGameModules[@]}")
+allCobraModules=("${coreModules[@]}" "${arcadeModules[@]}" "${studentExperienceModules[@]}" "${gameModules01[@]}" "${gameModules02[@]}" "${gameModules03[@]}" "${journeyModules[@]}" "${miniGameModules[@]}")
 
 function testcore {
 	testCoverage "${coreModules[@]}"
@@ -296,10 +308,18 @@ function testgames02 {
 	testCoverage "${gameModules02[@]}"
 }
 
+function testgames03 {
+	testCoverage "${gameModules03[@]}"
+}
+
+# an alias/another way of writing testgames03
+function testphonics {
+	testCoverage "${gameModules03[@]}"
+}
+
 function testminigames {
 	testCoverage "${miniGameModules[@]}"
 }
-
 
 # Test coverage just the core and current modules
 function tcc {
