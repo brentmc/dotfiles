@@ -337,6 +337,10 @@ function lall {
 	lintCobra "${allCobraModules[@]}"
 }
 
+function lphonics {
+	lintCobra "${gameModules03[@]}"
+}
+
 # Updates test coverage for all given modules
 function testCoverage() {
 	modules=("$@")
