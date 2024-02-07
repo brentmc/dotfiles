@@ -183,7 +183,7 @@ coreModules=(
 currentModules=(
 	games/sound_card
 	games/letter_hunt
-	games/sount_hunt
+	games/sound_hunt
 	games/word_hunt
 	games/picture_hunt
 	games/sound_button
@@ -252,7 +252,7 @@ gameModules03=(
 	games/letter_drop	
 	games/sound_card
 	games/letter_hunt
-	games/sount_hunt
+	games/sound_hunt
 	games/word_hunt
 	games/picture_hunt
 	games/sound_button
