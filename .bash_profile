@@ -187,6 +187,7 @@ currentModules=(
 	games/word_hunt
 	games/picture_hunt
 	games/sound_button
+	games/picture_word_puzzle
 )
 
 arcadeModules=(
@@ -256,6 +257,7 @@ gameModules03=(
 	games/word_hunt
 	games/picture_hunt
 	games/sound_button
+	games/picture_word_puzzle
 )
 
 journeyModules=(
